@@ -28,7 +28,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DashboardApplication {
 
-    //test
     public static void main(String[] args) {
         triggerSentinelInit();
         SpringApplication.run(DashboardApplication.class, args);
