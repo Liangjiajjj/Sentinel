@@ -118,7 +118,7 @@ public class DorisScheduledStoreService {
      */
     private void flushAllQueueToDB() {
         int allOfCurrentQueueCount = insertQueue.size();
-        LOGGER.info("[ScheduledStoreService] flushAllQueueToDB.  allOfCurrentQueueCount {}", allOfCurrentQueueCount);
+        LOGGER.debug("[ScheduledStoreService] flushAllQueueToDB.  allOfCurrentQueueCount {}", allOfCurrentQueueCount);
         storeEntityExecutor.execute(this::flushQueueToDB);
     }
 
@@ -142,6 +142,11 @@ public class DorisScheduledStoreService {
     }
 
 
+    /**
+     * @param dataBase
+     * @param tableName
+     * @param datas
+     */
     private void load(String dataBase, String tableName, List<Object> datas) {
         DorisResponse response = null;
         long start = System.currentTimeMillis();

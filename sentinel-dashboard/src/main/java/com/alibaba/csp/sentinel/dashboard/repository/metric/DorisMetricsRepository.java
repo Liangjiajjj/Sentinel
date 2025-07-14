@@ -117,7 +117,7 @@ public class DorisMetricsRepository implements MetricsRepository<MetricEntity> {
                 "FROM sentinel_metric " +
                 "WHERE app = ? AND `timestamp` >= ? " +
                 "GROUP BY resource " +
-                "ORDER BY SUM(block_qps) DESC, SUM(pass_qps) DESC";
+                "ORDER BY block_qps DESC, pass_qps DESC";
 
         return jdbcTemplate.query(sql, new Object[]{app, minTime}, (rs, rowNum) -> rs.getString("resource"));
     }
